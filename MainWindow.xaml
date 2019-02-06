@@ -1,0 +1,15 @@
+﻿<Window x:Class="AktualizatorTEZD.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AktualizatorTEZD"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="150" Width="400" ResizeMode="NoResize" SizeToContent="WidthAndHeight" Topmost="False" WindowState="Normal" Icon="./favicon.ico">
+    <Grid>
+        <Canvas Height="70" Width="260" Background="DarkGray">
+            <Image Source="./favicon.ico" Canvas.Top="4"/>
+            <Button Content="Sprawdź" Width="100" Height="50" Canvas.Left="85" Canvas.Top="10" BorderBrush="Beige" Click="Button_ClickAsync"/>
+        </Canvas>
+    </Grid>
+</Window>
