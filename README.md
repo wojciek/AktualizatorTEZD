@@ -8,5 +8,5 @@ Super simple app which updates some company application.
     <add key="appName" value="tEZD" />
 ### Path of application update packs
     <add key="updatePath" value="Z:\tEZD\dev\" />
-### Temp update directory in AppLpcation\Temp\...
+### Temp update directory in AppLocation\Temp\...
     <add key="tempUpdateDirectory" value="tEZD" />
