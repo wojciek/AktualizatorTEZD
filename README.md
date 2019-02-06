@@ -1,5 +1,5 @@
 # AktualizatorTEZD
-AktualizatorTEZD
+Super simple app which updates some company application.
 
 ## Initial Configuration
 ### Path where application is located
