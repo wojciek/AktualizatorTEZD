@@ -1,7 +1,7 @@
 # AktualizatorTEZD
 Super simple app which updates some company application.
 
-## Initial Configuration
+## Initial Configuration ```App.config```
 ### Path where application is located
     <add key="appPath" value="C:\Apps\tEZD\dev\tEZD_testy\" />
 ### Name of application
