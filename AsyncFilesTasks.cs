@@ -8,23 +8,25 @@ namespace AktualizatorTEZD
 {
   public static class AsyncFilesTasks
   {
-    public static async Task CopyFiles(string[] files, string appPath, string directory)
+    public static async Task CopyFiles(string sourcePath, string destinationPath)
     {
       await Task.Run(() =>
       {
         try
         {
-          foreach (var srcPath in Directory.GetFiles(appPath + directory))
-          {
-            File.Copy(srcPath, srcPath.Replace(appPath + directory, appPath), true);
-          }
+          foreach (string dirPath in Directory.GetDirectories(sourcePath, "*",
+            SearchOption.AllDirectories))
+            Directory.CreateDirectory(dirPath.Replace(sourcePath, destinationPath));
+
+          foreach (string newPath in Directory.GetFiles(sourcePath, "*.*",
+            SearchOption.AllDirectories))
+            File.Copy(newPath, newPath.Replace(sourcePath, destinationPath), true);
         }
         catch (Exception e)
         {
           MessageBox.Show("Copy Failed: " + e.Message, "Failed!", MessageBoxButton.OK);
         }
       });
-      //MessageBox.Show("Skopiowano pliki", "Sukces!", MessageBoxButton.OK);
     }
 
     public static async Task ExtractFiles(string lastUpdateFileNameWithPath, string appPath)
@@ -33,14 +35,13 @@ namespace AktualizatorTEZD
       {
         try
         {
-          ZipFile.ExtractToDirectory(lastUpdateFileNameWithPath, appPath + "Temp");
+          ZipFile.ExtractToDirectory(lastUpdateFileNameWithPath, appPath);
         }
         catch (Exception e)
         {
           MessageBox.Show("Extract failed: " + e.Message, "Failed!", MessageBoxButton.OK);
         }
       });
-      //MessageBox.Show("Wypakowano pliki", "Sukces!", MessageBoxButton.OK);
     }
 
     public static async Task DeleteFiles(string appPath, string directory)
@@ -59,7 +60,6 @@ namespace AktualizatorTEZD
           MessageBox.Show("Delete failed: " + e.Message, "Failed!", MessageBoxButton.OK);
         }
       });
-      //MessageBox.Show("Usunięto starą paczkę", "Sukces!", MessageBoxButton.OK);
     }
   }
 }

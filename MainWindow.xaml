@@ -5,11 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AktualizatorTEZD"
         mc:Ignorable="d"
-        Title="MainWindow" Height="150" Width="400" ResizeMode="NoResize" SizeToContent="WidthAndHeight" Topmost="False" WindowState="Normal" Icon="./favicon.ico">
-    <Grid>
-        <Canvas Height="70" Width="260" Background="DarkGray">
-            <Image Source="./favicon.ico" Canvas.Top="4"/>
-            <Button Content="Sprawdź" Width="100" Height="50" Canvas.Left="85" Canvas.Top="10" BorderBrush="Beige" Click="Button_ClickAsync"/>
+        Title="MainWindow" Height="350" Width="400" ResizeMode="NoResize" SizeToContent="WidthAndHeight" Topmost="False" WindowState="Normal" Icon="./favicon.ico">
+    <Grid Margin="0,0,0,98">
+        <Canvas Background="DarkGray" Margin="0,128,0,-103">
+            <Image Source="./favicon.ico" Canvas.Top="2"/>
+            <Button Content="Zapisz i sprawdź" Width="169" Height="66" Canvas.Left="205" Canvas.Top="10" BorderBrush="Beige" Click="Button_ClickAsync"/>
         </Canvas>
+        <Label Content="Ścieżka aplikacji" HorizontalAlignment="Left" Height="30" Margin="10,18,0,0" VerticalAlignment="Top" Width="121"/>
+        <Label Content="Nazwa aplikacji" HorizontalAlignment="Left" Height="29" Margin="10,55,0,0" VerticalAlignment="Top" Width="121"/>
+        <Label Content="Ścieżka paczki akt." HorizontalAlignment="Left" Height="27" Margin="10,90,0,0" VerticalAlignment="Top" Width="121"/>
+        <TextBox Name="appPath" HorizontalAlignment="Left" Height="30" Margin="131,18,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="245"/>
+        <TextBox Name ="appName" HorizontalAlignment="Left" Height="30" Margin="131,55,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="245"/>
+        <TextBox Name="updatePacksPath" HorizontalAlignment="Left" Height="27" Margin="131,90,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="245"/>
     </Grid>
 </Window>
