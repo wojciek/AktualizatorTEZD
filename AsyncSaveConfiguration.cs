@@ -14,11 +14,16 @@ namespace AktualizatorTEZD
         try
         {
           Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-          config.AppSettings.Settings["appPath"].Value = appPath;
-          config.AppSettings.Settings["updatePath"].Value = updatePacksPath;
-          config.AppSettings.Settings["appName"].Value = appName;
-          config.Save(ConfigurationSaveMode.Modified);
-          ConfigurationManager.RefreshSection("appSettings");
+          if (config.AppSettings.Settings["appPath"].Value != appPath
+          && config.AppSettings.Settings["updatePath"].Value != updatePacksPath
+          && config.AppSettings.Settings["appName"].Value != appName)
+          {
+            config.AppSettings.Settings["appPath"].Value = appPath;
+            config.AppSettings.Settings["updatePath"].Value = updatePacksPath;
+            config.AppSettings.Settings["appName"].Value = appName;
+            config.Save(ConfigurationSaveMode.Modified);
+            ConfigurationManager.RefreshSection("appSettings");
+          }
         }
         catch (Exception e)
         {

@@ -69,7 +69,7 @@ namespace AktualizatorTEZD
           "Aktualizuj", MessageBoxButton.OK);
 
         await AsyncFilesTasks.ExtractFiles(lastUpdateFileNameWithPath, _appPath + _tempUpdateDirectory);
-        await AsyncFilesTasks.CopyFiles(_appPath + _tempUpdateDirectory, _appPath);
+        await AsyncFilesTasks.CopyFiles(_appPath + _tempUpdateDirectory + @"tEZD", _appPath);
         await AsyncFilesTasks.CopyFiles(_appPath + "Config", _appPath);
 
         MessageBox.Show("Gotowe!", "Aktualizacja", MessageBoxButton.OK);
